@@ -34,7 +34,7 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
 | Name        | Type    | Required | Values Allowed                    | default values | Description                                                                      |
 | ----------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
 | key         | integer | true     | any integer                       | does not apply | Number of educational table, only for visual numbering                           |
-| edu         | object  | true     | see Educational.edu               | does not apply | Info for each educational tile needs edu object                                  |
+| edu         | object  | true     | see edu                           | does not apply | Info for each educational tile needs edu object                                  |
 | activeColor | string  | true     | hex value for color               | does not apply | What color to set as accent color                                                |
 
 
