@@ -26,8 +26,8 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
 | name        | string  | true     | Any string                        | does not apply | Name of phase for timeline                                                       |
 | dateFrom    | string  | true     | `YYYY-MM-DD`                      | does not apply | Starting date of phase                                                           |
 | dateTo      | string  | true     | `YYYY-MM-DD`                      | does not apply | Starting date of phase                                                           |
-| overlapping | boolean | false    | True `||` False                   | False          | True on any phase that overlaps other phase                                      |
-| gates       | array   | false    | edu objects                       | False          | Extra info for educational                                                       |
+| overlapping | boolean | false    | True or False                     | False          | True on any phase that overlaps other phase                                      |
+| gates       | array   | false    | edu objects                       | does not apply | Extra info for educational                                                       |
 
 
 ### Educational
