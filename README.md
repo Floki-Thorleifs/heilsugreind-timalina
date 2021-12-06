@@ -12,15 +12,26 @@ In Node.js:
 
 ```js
 import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
+
+<TimeAndEdu data={data} />
+<Timeline 
+  lang="is" 
+  activePhase={phase object} 
+  phases={data.plan.phases} 
+  changePhase={(args) => this.AnyFunction(args)} 
+/>
+ <Educational key={number} edu={gate object} activeColor={hex value for color} />
 ```
 
 ## Props
 
 ### Timeline
 
-| Name   | Type  | Required | Values Allowed | default values | Description             |
-| ------ | ----- | -------- | -------------- | -------------- | ----------------------- |
-| phases | array | true     | see phases     | does not apply | Each phase for timeline |
+| Name        | Type     | Required | Values Allowed | default values | Description                 |
+| ------      | -----    | -------- | -------------- | -------------- | -----------------------     |
+| phases      | array    | true     | see phases     | does not apply | Each phase for timeline     | 
+| lang        | string   | false    | "is"           | "en"           | Language for timeline       |
+| changePhase | function | true     | function       | none           | Function when phase clicked | 
 
 #### phases
 
