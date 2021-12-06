@@ -101,6 +101,7 @@
 }
 .timeline_phase.active {
     cursor: default !important;
+    color: white !important;
 }
 .timeline_phase.inactive {
     background-color: white !important;

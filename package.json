@@ -1,6 +1,6 @@
 {
   "name": "heilsugreind-timalina",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "timalina fyrir heilsugreind",
   "main": "./lib/Timeline.js",
   "scripts": {
