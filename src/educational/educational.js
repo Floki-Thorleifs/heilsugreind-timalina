@@ -86,7 +86,7 @@ export default class Educational extends Component {
                 <div className="educational_inner">
 
                     <div className="educational_header">
-                        <h3 className="educational_title"><span className="educational_step">{edu.step?edu.step:this.props.key}.</span> {edu.name}</h3>
+                        <h3 className="educational_title"><span className="educational_step">{typeof edu.step !== "undefined"?edu.step:this.props.key}</span> {edu.name}</h3>
                     </div>
                     <div className="educational_content">
                         <span className="educational_text">{edu.text}</span>
