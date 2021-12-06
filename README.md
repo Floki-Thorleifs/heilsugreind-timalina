@@ -45,10 +45,11 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
 | Name        | Type   | Required | Values Allowed                  | default values | Description              |
 | ----------- | ------ | -------- | ------------------------------- | -------------- | ------------------------ |
 | name        | string | true     | Any string                      | does not apply | Name of educational tile |
-| text        | string | true     | Any string                      | does not apply | Info text for til        |
+| text        | string | true     | Any string                      | does not apply | Info text for tile       |
 | myrole      | string | false    | Any string                      | does not apply | Extra text info for tile |
 | time_limits | string | false    | Any string                      | does not apply | Extra text info for tile |
 | info        | array  | false    | {text: `string`, link: `<url>`} | does not apply | Links to other sources   |
+| step        | integer| false    | Any integer                     | does not apply | Visual number of tile    |
 
 ### TimeAndEdu
 
