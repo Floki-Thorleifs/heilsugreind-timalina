@@ -1,6 +1,4 @@
 # heilsugreind-timalina
-## Download
-
 
 ## Installation
 
