@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "flowflexcomplex",
-  "license": "ISC",
+  "license": "MIT",
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.14.0",
