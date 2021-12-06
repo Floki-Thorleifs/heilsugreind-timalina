@@ -1,0 +1,117 @@
+.timeline_outer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    min-width: 1450px;
+    margin: 1rem auto;
+    position: relative;
+}
+.timeline_months {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+.timeline_years {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+.timeline_overlay {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+.timeline_overlay_inner {
+    border-left: 1px solid #3576cb;
+    text-align: center;
+    position: relative;
+    min-height: 100%;
+    z-index: 100;
+}
+.timeline_overlay_inner:last-child {
+    border-right: 1px solid #3576cb;
+}
+.timeline_year {
+    border-left: 1px solid #3576cb;
+    text-align: center;
+}
+.timeline_year:last-child {
+    border-right: 1px solid #3576cb;
+}
+.timeline_month {
+    border-left: 1px solid #3576cb;
+    text-align: center;
+    
+}
+.timeline_month:last-child {
+    border-right: 1px solid #3576cb;
+}
+.timeline_phases {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0.3rem 0;
+    border-top: 1px solid #3576cb;
+    font-size: 1rem;
+    position: relative;
+    z-index: 200;
+}
+.timeline_phases:last-child {
+    border-bottom: 1px solid #3576cb;
+}
+.timeline_phase {
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    height: fit-content;
+    overflow: hidden;
+}
+.timeline_phase > span {
+    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
+    margin: auto;
+}
+.timeline_phase.all_active {
+    cursor: default !important;
+}
+.timeline_phase.all_active:hover {
+    overflow: visible;
+}
+.timeline_phase.all_active:hover > span {
+    color: black;
+}
+.month_tooltip_text {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    justify-content: space-between;
+    border-bottom: 1px solid #3576cb;
+}
+.month_tooltip_text > span {
+    width: 300px;
+}
+.timeline_phase.active {
+    cursor: default !important;
+}
+.timeline_phase.inactive {
+    background-color: white !important;
+    color: black !important;
+}
+@media only screen and (max-width: 800px) {
+    .timeline_outer {
+        width: 100%;
+        margin: auto 0;
+   }
+    .timeline_months {
+        display: none;
+   }
+}

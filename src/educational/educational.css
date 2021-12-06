@@ -1,0 +1,171 @@
+span, h1, h2, h3, div {
+    color: black
+}
+
+.educational_outer {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    min-height: 10rem;
+    margin: 2rem auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    position: relative;
+    background-color: #f0f0f0;
+    width: 90%;
+    min-width: 1450px;
+}
+.educational_inner {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 1rem;
+}
+.educational_step {
+    width: 2rem;
+}
+.educational_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.educational_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.educational_content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.educational_content.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+.educational_content_line {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.educational_content_line.half {
+    width: 25%;
+}
+.educational_content_line_header {
+    display: flex;
+    flex-direction: row;
+}
+.educational_content_line_content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+.educational_text {
+    font-size: 1rem;
+    text-align: left;
+}
+.educational_text_small {
+    font-size: 1rem;
+}
+.educational_text_date {
+    font-size: 1rem;
+    margin: 0 2rem;
+    width: 8rem;
+}
+.educational_content_name {
+    margin: auto 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.educational_date {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    padding: 1rem;
+    width: 10%;
+    min-height: inherit;
+    text-align: center;
+    font-size: 1.2rem;
+    justify-content: space-around;
+    color: white;
+}
+.educational_date_inner {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+}
+.educational_date_inner > span {
+    font-size: calc((1vw + 1vh)/1.5);
+}
+.educational_date_inner.done {
+    color: black;
+}
+.educational_date.not_confirmed {
+    font-style: italic;
+}
+.educational_content_button {
+    background-color: #3576cb;
+    color: white;
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.educational_content_button:hover {
+    filter: brightness(80%);
+    color: white;
+    text-decoration: none;
+}
+.educational_drop {
+    height: 1rem;
+    -webkit-transition: all 500ms ease;
+}
+.educational_drop.flip_image_horizontal {
+    transform: scaleY(-1);
+    -webkit-transition: all 500ms ease;
+}
+.educational_line_img {
+    max-width: 1.5rem;
+    margin: auto 0.5rem;
+}
+.educational_date_img {
+    max-width: 2rem;
+    margin: 0.5rem auto;
+    filter: invert(1);
+}
+.educational_date_img.pointer {
+    cursor: pointer;
+}
+.educational_date_img.done {
+    filter: invert(0);
+}
+@media only screen and (max-width: 800px) {
+    .educational_date_inner > span {
+        font-size: 1.2rem;
+   }
+    .educational_outer {
+        flex-direction: column;
+   }
+    .educational_date {
+        width: 100%;
+        min-height: 2rem;
+   }
+    .educational_inner {
+        width: 100%;
+   }
+}
+@media only screen and (max-width: 425px) {
+    .educational_outer {
+        margin: 2rem 0;
+   }
+    .educational_title {
+        font-size: 1.2rem;
+   }
+    .educational_text {
+        font-size: 1rem;
+   }
+}
