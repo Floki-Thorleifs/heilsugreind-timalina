@@ -1,10 +1,14 @@
 {
   "name": "heilsugreind-timalina",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "timalina fyrir heilsugreind",
   "main": "./lib/Timeline.js",
   "scripts": {
     "build": "NODE_ENV=development BABEL_ENV=development webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Floki-Thorleifs/heilsugreind-timalina"
   },
   "keywords": [],
   "author": "flowflexcomplex",
