@@ -123,27 +123,27 @@ export default class Educational extends Component {
                             </div>
                         </div>)
                         : null}
-                    {edu.myrole ? (
+                    {edu.myRole ? (
                         <div className="educational_content">
                             <div className="educational_content_line">
                                 <div className="educational_content_line_header">
                                     <span className="educational_content_name">Hvað get ég gert?</span>
                                 </div>
                                 <div className="educational_content_line_content" >
-                                    <span className="educational_text">{edu.myrole}</span>
+                                    <span className="educational_text">{edu.myRole}</span>
                                 </div>
 
                             </div>
                         </div>
                     ) : null}
-                    {edu.time_limits && edu.time_limits !== 'null' ? (
+                    {edu.timeLimits && edu.timeLimits !== 'null' ? (
                         <div className="educational_content">
                             <div className="educational_content_line">
                                 <div className="educational_content_line_header">
                                     <span className="educational_content_name">Tímaviðmið</span>
                                 </div>
                                 <div className="educational_content_line_content" >
-                                    <span className="educational_text">{edu.time_limits}</span>
+                                    <span className="educational_text">{edu.timeLimits}</span>
                                 </div>
 
                             </div>

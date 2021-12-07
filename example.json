@@ -1,0 +1,60 @@
+{
+    "plan": {
+      "phases": [
+        {
+          "name": "Lorem Ipsum",
+          "overlapping": false,
+          "dateFrom": "2020-12-18T00:00:00",
+          "dateTo": "2021-02-17T00:00:00",
+          "gates": [
+            {
+              "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "name": "Lorem Ipsum",
+              "step": 1,
+              "myRole": "Lorem Plorem",
+              "timeLimits": null,
+              "info": [
+                {
+                  "text": "Link to stuff",
+                  "link": "/test"
+                }
+              ],
+              "dates": [
+                {
+                  "date": "2021-01-26T00:00:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Excepteur sint",
+          "overlapping": true,
+          "dateFrom": "2021-01-18T00:00:00",
+          "dateTo": "2021-05-17T00:00:00",
+          "gates": [
+            {
+              "text":"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "name": "Excepteur sint",
+              "step": 1,
+              "myRole": null,
+              "timeLimits": null,
+              "info": [
+                {
+                  "text": "Link to stuff",
+                  "link": "/test"
+                }
+              ],
+              "dates": [
+                {
+                  "date": "2021-02-13T00:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+            
+  

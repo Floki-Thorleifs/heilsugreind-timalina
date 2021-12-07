@@ -57,8 +57,8 @@ export default class Timeline extends Component {
 
     makeTimeline(props) {
         const { phases } = props;
-        const dateStart = moment(phases.reduce((a, b) => moment(a.datefrom).isBefore(moment(b.datefrom)) ? a : b).datefrom, format);
-        const dateEnd = moment(phases.reduce((a, b) => moment(a.dateto).isAfter(moment(b.dateto)) ? a : b).dateto, format);
+        const dateStart = moment(phases.reduce((a, b) => moment(a.dateFrom).isBefore(moment(b.dateFrom)) ? a : b).dateFrom, format);
+        const dateEnd = moment(phases.reduce((a, b) => moment(a.dateTo).isAfter(moment(b.dateTo)) ? a : b).dateTo, format);
         var months = [];
         let years = {};
         while (dateStart.isSameOrBefore(dateEnd, "month")) {
@@ -66,10 +66,10 @@ export default class Timeline extends Component {
             const year = dateStart.format('YYYY')
             if (!years[year]) {
                 years[year] = {}
-                years[year].datefrom = moment(moment(dateStart).startOf('month'));
+                years[year].dateFrom = moment(moment(dateStart).startOf('month'));
 
             } else {
-                years[year].dateto = moment(moment(dateStart).endOf('month'))
+                years[year].dateTo = moment(moment(dateStart).endOf('month'))
 
             }
             dateStart.add(1, 'month');
@@ -77,18 +77,18 @@ export default class Timeline extends Component {
         const yearsArray = Object.entries(years);
         yearsArray.forEach((i, k) => {
             if (yearsArray[k + 1]) {
-                years[yearsArray[k][0]].dateto = moment(years[yearsArray[k][0]].datefrom).endOf('year')
+                years[yearsArray[k][0]].dateTo = moment(years[yearsArray[k][0]].dateFrom).endOf('year')
             }
             if (yearsArray[k - 1]) {
-                years[yearsArray[k][0]].datefrom = moment(years[yearsArray[k][0]].datefrom).startOf('year')
+                years[yearsArray[k][0]].dateFrom = moment(years[yearsArray[k][0]].dateFrom).startOf('year')
             }
 
         })
         const finalYears = Object.entries(years).map(i => i[1])
-        phases.sort((a, b) => moment(a.dateto).isBefore(b.dateto) ? -1 : 1)
-        const tempDateStart = moment(phases.reduce((a, b) => moment(a.datefrom).isBefore(moment(b.datefrom)) ? a : b).datefrom, format);
+        phases.sort((a, b) => moment(a.dateTo).isBefore(b.dateTo) ? -1 : 1)
+        const tempDateStart = moment(phases.reduce((a, b) => moment(a.dateFrom).isBefore(moment(b.dateFrom)) ? a : b).dateFrom, format);
         const new_dateStart = moment().isBefore(moment(tempDateStart)) ? moment() : tempDateStart;
-        const new_dateEnd = moment(phases.reduce((a, b) => moment(a.dateto).isAfter(moment(b.dateto)) ? a : b).dateto, format);
+        const new_dateEnd = moment(phases.reduce((a, b) => moment(a.dateTo).isAfter(moment(b.dateTo)) ? a : b).dateTo, format);
         const maxDays = moment(new_dateEnd).endOf('month').diff(new_dateStart.startOf('month'), 'days') + 1;
         this.setState({ months: months, years: finalYears, phases: phases, dateStart: new_dateStart, dateEnd: new_dateEnd, maxDays: maxDays });
     }
@@ -120,11 +120,11 @@ export default class Timeline extends Component {
                     <div className="timeline_years">
                         {
                             years.map((i, key) => {
-                                const monthDays = moment(i.dateto).endOf('day').diff(moment(i.datefrom).startOf('day'), 'days') + 1;
+                                const monthDays = moment(i.dateTo).endOf('day').diff(moment(i.dateFrom).startOf('day'), 'days') + 1;
                                 const style = { "width": `${(monthDays / maxDays) * 100}%` }
                                 return (
                                     <div key={key} className="timeline_year" style={style}>
-                                        {moment(i.datefrom).format('YYYY')}
+                                        {moment(i.dateFrom).format('YYYY')}
                                     </div>
                                 )
                             })}
@@ -152,15 +152,15 @@ export default class Timeline extends Component {
                     <div className="timeline_phases">
                         {
                             notOverlapping.map((i, key) => {
-                                const phaseDays = moment(i.dateto, format).diff(moment(i.datefrom, format), 'days') + 1;
+                                const phaseDays = moment(i.dateTo, format).diff(moment(i.dateFrom, format), 'days') + 1;
                                 let whitespaceDays;
-                                const phase_color = colors[i.name]?colors[i.name]:phaseColors[color_key % phaseColors.length];
+                                const phase_color = colors[i.name] ? colors[i.name] : phaseColors[color_key % phaseColors.length];
                                 if (key === 0) {
                                     var startDate = moment(months[0]).startOf('month');
-                                    whitespaceDays = moment(i.datefrom).diff(startDate, 'days');
+                                    whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
                                 } else {
-                                    var startDate = moment(phases[key - 1].dateto);
-                                    whitespaceDays = moment(i.datefrom).diff(startDate.add(1, 'days'), 'days');
+                                    var startDate = moment(phases[key - 1].dateTo);
+                                    whitespaceDays = moment(i.dateFrom).diff(startDate.add(1, 'days'), 'days');
                                 }
                                 const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "marginLeft": `${(whitespaceDays / maxDays) * 100}%` }
                                 color_key += 1;
@@ -174,12 +174,12 @@ export default class Timeline extends Component {
                 ) : null}
                 {months && overlappingPhases.length ?
                     overlappingPhases.map((i, key) => {
-                        const phaseDays = moment(i.dateto, format).diff(moment(i.datefrom, format), 'days') + 1;
+                        const phaseDays = moment(i.dateTo, format).diff(moment(i.dateFrom, format), 'days') + 1;
 
                         let whitespaceDays;
                         var startDate = moment(months[0]).startOf('month');
-                        whitespaceDays = moment(i.datefrom).diff(startDate, 'days');
-                        const phase_color = colors[i.name]?colors[i.name]:phaseColors[color_key % phaseColors.length];
+                        whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
+                        const phase_color = colors[i.name] ? colors[i.name] : phaseColors[color_key % phaseColors.length];
                         const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "marginLeft": `${(whitespaceDays / maxDays) * 100}%` }
                         color_key += 1;
                         return (

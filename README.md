@@ -57,8 +57,8 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
 | ----------- | ------ | -------- | ------------------------------- | -------------- | ------------------------ |
 | name        | string | true     | Any string                      | does not apply | Name of educational tile |
 | text        | string | true     | Any string                      | does not apply | Info text for tile       |
-| myrole      | string | false    | Any string                      | does not apply | Extra text info for tile |
-| time_limits | string | false    | Any string                      | does not apply | Extra text info for tile |
+| myRole      | string | false    | Any string                      | does not apply | Extra text info for tile |
+| timeLimits | string | false    | Any string                      | does not apply | Extra text info for tile |
 | info        | array  | false    | {text: `string`, link: `<url>`} | does not apply | Links to other sources   |
 | step        | integer| false    | Any integer                     | does not apply | Visual number of tile    |
 
@@ -77,15 +77,15 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
       {
         "name": "Lorem Ipsum",
         "overlapping": false,
-        "datefrom": "2020-12-18T00:00:00",
-        "dateto": "2021-02-17T00:00:00",
+        "dateFrom": "2020-12-18T00:00:00",
+        "dateTo": "2021-02-17T00:00:00",
         "gates": [
           {
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "name": "Lorem Ipsum",
             "step": 1,
-            "myrole": null,
-            "time_limits": null,
+            "myRole": "Lorem Plorem",
+            "timeLimits": null,
             "info": [
               {
                 "text": "Link to stuff",
@@ -103,15 +103,15 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
       {
         "name": "Excepteur sint",
         "overlapping": true,
-        "datefrom": "2021-01-18T00:00:00",
-        "dateto": "2021-05-17T00:00:00",
+        "dateFrom": "2021-01-18T00:00:00",
+        "dateTo": "2021-05-17T00:00:00",
         "gates": [
           {
-            "text": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "text":"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
             "name": "Excepteur sint",
             "step": 1,
-            "myrole": null,
-            "time_limits": null,
+            "myRole": null,
+            "timeLimits": null,
             "info": [
               {
                 "text": "Link to stuff",
@@ -129,4 +129,6 @@ import { Timeline, Educational, TimeAndEdu } from "heilsugreind-timalina";
     ]
   }
 }
+          
+
 ```
