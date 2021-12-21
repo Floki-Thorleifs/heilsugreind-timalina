@@ -12,6 +12,7 @@
     width: 100%;
     margin: 0.3rem 0;
     font-size: 1rem;
+
 }
 .timeline_years {
     display: flex;
@@ -19,6 +20,7 @@
     width: 100%;
     margin: 0.3rem 0;
     font-size: 1rem;
+
 }
 .timeline_overlay {
     display: flex;
@@ -48,7 +50,8 @@
 .timeline_month {
     border-left: 1px solid #3576cb;
     text-align: center;
-    
+    position: relative;
+    z-index: 200;
 }
 .timeline_month:last-child {
     border-right: 1px solid #3576cb;
@@ -60,22 +63,24 @@
     margin: 0;
     padding: 0.3rem 0;
     border-top: 1px solid #3576cb;
-    font-size: 1rem;
     position: relative;
     z-index: 200;
+    min-height: 2rem;
 }
 .timeline_phases:last-child {
     border-bottom: 1px solid #3576cb;
 }
 .timeline_phase {
+    position: absolute;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
     overflow: hidden;
+    font-size: min(60%, 2rem);
 }
 .timeline_phase > span {
-    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
     margin: auto;
 }
 .timeline_phase.all_active {
@@ -101,7 +106,6 @@
 }
 .timeline_phase.active {
     cursor: default !important;
-    color: white !important;
 }
 .timeline_phase.inactive {
     background-color: white !important;

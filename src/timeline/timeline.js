@@ -153,20 +153,14 @@ export default class Timeline extends Component {
                         {
                             notOverlapping.map((i, key) => {
                                 const phaseDays = moment(i.dateTo, format).diff(moment(i.dateFrom, format), 'days') + 1;
-                                let whitespaceDays;
                                 const phase_color = colors[i.name] ? colors[i.name] : phaseColors[color_key % phaseColors.length];
-                                if (key === 0) {
-                                    var startDate = moment(months[0]).startOf('month');
-                                    whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
-                                } else {
-                                    var startDate = moment(phases[key - 1].dateTo);
-                                    whitespaceDays = moment(i.dateFrom).diff(startDate.add(1, 'days'), 'days');
-                                }
-                                const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "marginLeft": `${(whitespaceDays / maxDays) * 100}%` }
+                                const startDate = moment(dateStart).startOf('month');
+                                const whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
+                                const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "left": `${(whitespaceDays / maxDays) * 100}%` }
                                 color_key += 1;
                                 return (
                                     <div key={key} className={`timeline_phase ${this.state.allActive ? "all_active" : this.state.activePhase.rank === i.rank && this.state.activePhase.name === i.name ? "active" : 'inactive'}`} style={style} onClick={() => this.changeActivePhase(i)}>
-                                        <span>{i.name}</span>
+                                        {i.name}
                                     </div>
                                 )
                             })}
@@ -175,17 +169,15 @@ export default class Timeline extends Component {
                 {months && overlappingPhases.length ?
                     overlappingPhases.map((i, key) => {
                         const phaseDays = moment(i.dateTo, format).diff(moment(i.dateFrom, format), 'days') + 1;
-
-                        let whitespaceDays;
-                        var startDate = moment(months[0]).startOf('month');
-                        whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
+                        const startDate = moment(dateStart).startOf('month');
+                        const whitespaceDays = moment(i.dateFrom).diff(startDate, 'days');
                         const phase_color = colors[i.name] ? colors[i.name] : phaseColors[color_key % phaseColors.length];
-                        const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "marginLeft": `${(whitespaceDays / maxDays) * 100}%` }
+                        const style = { "width": `${(phaseDays / maxDays) * 100}%`, "backgroundColor": phase_color, "border": `1px solid ${phase_color}`, "color": "white", "left": `${(whitespaceDays / maxDays) * 100}%` }
                         color_key += 1;
                         return (
                             <div key={key} className="timeline_phases">
                                 <div className={`timeline_phase ${this.state.allActive ? "all_active" : this.state.activePhase.rank === i.rank && this.state.activePhase.name === i.name ? "active" : 'inactive'}`} style={style} onClick={() => this.changeActivePhase(i)}>
-                                    <span>{i.name}</span>
+                                    {i.name}
                                 </div>
                             </div>
                         )
